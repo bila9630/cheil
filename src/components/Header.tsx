@@ -1,9 +1,18 @@
-import { Search } from "lucide-react";
+import { Search, User, Settings, Shield } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
+  const navigate = useNavigate();
+
   return (
     <header className="sticky top-0 z-10 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
@@ -21,11 +30,29 @@ export function Header() {
           </div>
         </div>
 
-        <Avatar className="ring-2 ring-primary">
-          <AvatarFallback className="bg-primary text-primary-foreground font-heading font-bold">
-            JD
-          </AvatarFallback>
-        </Avatar>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Avatar className="ring-2 ring-primary cursor-pointer hover:ring-primary/70 transition-all">
+              <AvatarFallback className="bg-primary text-primary-foreground font-heading font-bold">
+                JD
+              </AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-48 bg-card border-border z-50" align="end">
+            <DropdownMenuItem onClick={() => navigate("/profile")} className="cursor-pointer">
+              <User className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer">
+              <Settings className="mr-2 h-4 w-4" />
+              <span>Settings</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer">
+              <Shield className="mr-2 h-4 w-4" />
+              <span>Switch to Admin</span>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </header>
   );
