@@ -3,8 +3,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
+import { Header } from "@/components/Header";
 import Homepage from "./pages/Homepage";
 import Duell from "./pages/Duell";
 import Profile from "./pages/Profile";
@@ -17,9 +18,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
     <div className="flex min-h-screen w-full">
       <AppSidebar />
       <main className="flex-1 overflow-auto">
-        <div className="lg:hidden border-b border-border">
-          <SidebarTrigger className="m-4" />
-        </div>
+        <Header />
         {children}
       </main>
     </div>
