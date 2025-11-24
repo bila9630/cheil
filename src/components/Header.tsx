@@ -18,7 +18,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
         <div className="flex items-center gap-4 flex-1">
           <SidebarTrigger className="lg:hidden" />
-          <div className="w-full lg:w-1/2 relative">
+          <div className="w-full lg:w-3/4 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Search questions, insights..."
