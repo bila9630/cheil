@@ -2,7 +2,6 @@ import { Search, Bell } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { LevelProgress } from "@/components/LevelProgress";
 import { StreakCard } from "@/components/StreakCard";
 import { RankCard } from "@/components/RankCard";
 
@@ -51,9 +50,6 @@ export default function Homepage() {
             You have <span className="font-semibold text-primary">10</span> new questions waiting
           </p>
         </div>
-
-        {/* Level Progress */}
-        <LevelProgress level={5} currentXp={850} targetXp={506} />
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
