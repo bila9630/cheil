@@ -21,12 +21,12 @@ export function RankCard() {
   const xpNeeded = currentUser ? 211 : 0;
 
   return (
-    <Card className="bg-rank border-rank-foreground/10 shadow-card">
+    <Card className="bg-card border-primary/20 shadow-elevated">
       <div className="p-6">
         <div className="flex items-start justify-between mb-6">
           <div>
-            <h3 className="font-heading font-bold text-2xl mb-1 text-rank-foreground">Your Rank</h3>
-            <p className="text-rank-foreground/70">Compete with others!</p>
+            <h3 className="font-heading font-bold text-2xl mb-1 text-foreground">Your Rank</h3>
+            <p className="text-muted-foreground">Compete with others!</p>
           </div>
           <div className="bg-primary/10 p-3 rounded-full">
             <Trophy className="h-6 w-6 text-primary" />
@@ -39,12 +39,12 @@ export function RankCard() {
               key={idx}
               className={`flex items-center gap-4 p-3 rounded-lg transition-all ${
                 user.isCurrentUser
-                  ? "bg-primary/10 border-2 border-primary/30"
-                  : "bg-white/50"
+                  ? "bg-primary/5 border-2 border-primary"
+                  : "bg-muted"
               }`}
             >
               <div className="flex items-center gap-2 min-w-[60px]">
-                <ChevronUp className="h-4 w-4 text-green-600" />
+                <ChevronUp className="h-4 w-4 text-primary" />
                 <span className="font-heading font-bold text-lg text-primary">
                   #{user.rank}
                 </span>
@@ -55,7 +55,7 @@ export function RankCard() {
                   className={
                     user.isCurrentUser
                       ? "bg-primary text-primary-foreground font-heading font-bold"
-                      : "bg-muted text-muted-foreground"
+                      : "bg-card text-foreground font-heading font-bold"
                   }
                 >
                   {user.initials}
