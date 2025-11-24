@@ -46,9 +46,6 @@ export default function Homepage() {
             </h1>
             <span className="text-4xl">👋</span>
           </div>
-          <p className="text-lg text-muted-foreground">
-            You have <span className="font-semibold text-primary">10</span> new questions waiting
-          </p>
         </div>
 
         {/* Cards Grid */}
