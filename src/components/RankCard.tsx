@@ -21,7 +21,7 @@ export function RankCard() {
   const xpNeeded = currentUser ? 211 : 0;
 
   return (
-    <Card className="bg-card border-primary/20 shadow-elevated">
+    <Card className="bg-card border-primary/20 shadow-elevated overflow-hidden relative group hover:border-primary/40 transition-colors">
       <div className="p-6">
         <div className="flex items-start justify-between mb-6">
           <div>
