@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { StreakCard } from "@/components/StreakCard";
 import { RankCard } from "@/components/RankCard";
+import { CourseCard } from "@/components/CourseCard";
+import { BookOpen, Globe, MessageSquare, GraduationCap } from "lucide-react";
 
 export default function Homepage() {
   return (
@@ -23,19 +24,51 @@ export default function Homepage() {
           <RankCard />
         </div>
 
-        {/* Questions Section */}
+        {/* Courses Section */}
         <div className="space-y-4">
-          <div className="flex items-center gap-4">
-            <Button variant="secondary" className="font-medium">
-              New (10)
-            </Button>
-            <Button variant="ghost" className="font-medium text-muted-foreground">
-              Completed (0)
-            </Button>
-          </div>
-
-          <div className="bg-card border border-border rounded-lg p-8 text-center shadow-card">
-            <p className="text-muted-foreground">Questions will appear here</p>
+          <h2 className="font-heading font-bold text-2xl text-foreground">Your Courses</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <CourseCard
+              id="1"
+              title="German Basics"
+              description="Master everyday German conversations and essential grammar"
+              icon={Globe}
+              progress={65}
+              totalLessons={24}
+              completedLessons={16}
+              color="bg-blue-500/10 text-blue-500"
+            />
+            <CourseCard
+              id="2"
+              title="Spanish Fundamentals"
+              description="Learn Spanish pronunciation and common phrases"
+              icon={MessageSquare}
+              progress={42}
+              totalLessons={30}
+              completedLessons={13}
+              color="bg-orange-500/10 text-orange-500"
+            />
+            <CourseCard
+              id="3"
+              title="French Essentials"
+              description="Discover French culture and language basics"
+              icon={BookOpen}
+              progress={28}
+              totalLessons={28}
+              completedLessons={8}
+              color="bg-purple-500/10 text-purple-500"
+            />
+            <CourseCard
+              id="4"
+              title="Italian Beginner"
+              description="Dive into Italian vocabulary and expressions"
+              icon={GraduationCap}
+              progress={15}
+              totalLessons={26}
+              completedLessons={4}
+              color="bg-green-500/10 text-green-500"
+            />
           </div>
         </div>
       </main>
