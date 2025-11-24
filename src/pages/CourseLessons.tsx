@@ -22,10 +22,10 @@ const mockLessons: Lesson[] = [
 ];
 
 const courses = {
-  "1": { title: "German Basics", section: "Section 1, Unit 3", topic: "Greetings & Introductions" },
-  "2": { title: "Spanish Fundamentals", section: "Section 2, Unit 5", topic: "Daily Conversations" },
-  "3": { title: "French Essentials", section: "Section 1, Unit 2", topic: "Numbers & Colors" },
-  "4": { title: "Italian Beginner", section: "Section 3, Unit 7", topic: "Food & Dining" },
+  "1": { title: "Python", section: "Section 1, Unit 3", topic: "Functions & Data Structures" },
+  "2": { title: "Machine Learning", section: "Section 2, Unit 5", topic: "Neural Networks Basics" },
+  "3": { title: "How to Communicate", section: "Section 1, Unit 2", topic: "Active Listening Skills" },
+  "4": { title: "Social Intelligence", section: "Section 3, Unit 7", topic: "Reading Body Language" },
 };
 
 export default function CourseLessons() {
