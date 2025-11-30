@@ -66,28 +66,10 @@ export default function CourseLessons() {
 
         {/* Course Header */}
         <div className="bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl p-6 mb-8 border border-primary/20">
-          <div className="flex items-start justify-between">
-            <div>
-              <Badge variant="secondary" className="mb-2">{course.section}</Badge>
-              <h1 className="font-heading font-bold text-3xl mb-2">{course.topic}</h1>
-              <p className="text-muted-foreground">{course.title}</p>
-            </div>
-            <div className="text-right">
-              <div className="flex gap-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <Star className="w-5 h-5 text-primary" fill="currentColor" />
-                  </div>
-                  <span className="font-bold">1043</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-destructive/20 rounded-lg flex items-center justify-center">
-                    <span className="text-xl">❤️</span>
-                  </div>
-                  <span className="font-bold">25</span>
-                </div>
-              </div>
-            </div>
+          <div>
+            <Badge variant="secondary" className="mb-2">{course.section}</Badge>
+            <h1 className="font-heading font-bold text-3xl mb-2">{course.topic}</h1>
+            <p className="text-muted-foreground">{course.title}</p>
           </div>
         </div>
 
