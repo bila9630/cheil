@@ -15,6 +15,7 @@ interface Profile {
   streak: number;
   courses: { name: string; progress: number }[];
   jobPosition: string;
+  aboutMe: string;
 }
 
 const mockProfiles: Profile[] = [
@@ -29,7 +30,8 @@ const mockProfiles: Profile[] = [
       { name: "Machine Learning", progress: 65 },
       { name: "Java", progress: 42 }
     ],
-    jobPosition: "Data Analyst"
+    jobPosition: "Data Analyst",
+    aboutMe: "I'm passionate about turning data into insights. When I'm not analyzing datasets, you'll find me exploring new ML algorithms or contributing to open-source projects. Always eager to connect with fellow data enthusiasts!"
   },
   { 
     id: "2", 
@@ -42,7 +44,8 @@ const mockProfiles: Profile[] = [
       { name: "How to Communicate", progress: 78 },
       { name: "Social Intelligence", progress: 55 }
     ],
-    jobPosition: "Marketing Manager"
+    jobPosition: "Marketing Manager",
+    aboutMe: "I believe in the power of authentic communication. My journey in marketing has taught me that connecting with people is an art form. I love bringing teams together and creating campaigns that resonate."
   },
   { 
     id: "3", 
@@ -55,7 +58,8 @@ const mockProfiles: Profile[] = [
       { name: "Python", progress: 92 },
       { name: "How to Communicate", progress: 88 }
     ],
-    jobPosition: "Senior Data Scientist"
+    jobPosition: "Senior Data Scientist",
+    aboutMe: "Building intelligent systems that solve real-world problems is my passion. I specialize in deep learning and have worked on projects ranging from computer vision to NLP. Always learning, always growing."
   },
   { 
     id: "4", 
@@ -68,7 +72,8 @@ const mockProfiles: Profile[] = [
       { name: "Social Intelligence", progress: 34 },
       { name: "Python", progress: 22 }
     ],
-    jobPosition: "Content Writer"
+    jobPosition: "Content Writer",
+    aboutMe: "Words are my craft, stories are my passion. I love creating content that inspires and engages. Currently exploring the intersection of creativity and technology. Let's connect and share ideas!"
   },
   { 
     id: "5", 
@@ -81,7 +86,8 @@ const mockProfiles: Profile[] = [
       { name: "Python", progress: 71 },
       { name: "Machine Learning", progress: 48 }
     ],
-    jobPosition: "Frontend Developer"
+    jobPosition: "Frontend Developer",
+    aboutMe: "I create beautiful, user-friendly web experiences. My background in design gives me a unique perspective on frontend development. Always excited to learn new technologies and expand my skill set."
   },
 ];
 
@@ -176,11 +182,11 @@ export default function Duell() {
                   </div>
                 </div>
 
-                {/* Large text area */}
-                <Textarea 
-                  placeholder="Enter longer text..." 
-                  className="min-h-[300px] bg-muted border-muted-foreground/20 resize-none"
-                />
+                {/* About Me */}
+                <div className="bg-muted border border-muted-foreground/20 rounded-md p-4">
+                  <h3 className="text-sm font-semibold text-muted-foreground mb-3">About Me:</h3>
+                  <p className="text-sm leading-relaxed">{currentProfile.aboutMe}</p>
+                </div>
               </div>
             </div>
           </Card>
