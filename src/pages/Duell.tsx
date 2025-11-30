@@ -12,14 +12,15 @@ interface Profile {
   age: number;
   bio: string;
   interests: string[];
+  streak: number;
 }
 
 const mockProfiles: Profile[] = [
-  { id: "1", name: "Alex Johnson", age: 24, bio: "Love learning Python and ML", interests: ["Python", "Machine Learning", "Tech"] },
-  { id: "2", name: "Sarah Miller", age: 26, bio: "Communication expert and social butterfly", interests: ["Communication", "Social Intelligence", "Networking"] },
-  { id: "3", name: "Mike Chen", age: 28, bio: "AI enthusiast and data scientist", interests: ["Machine Learning", "Python", "Data Science"] },
-  { id: "4", name: "Emma Davis", age: 23, bio: "Building my communication skills daily", interests: ["How to Communicate", "Social Intelligence"] },
-  { id: "5", name: "James Wilson", age: 27, bio: "Code by day, learn by night", interests: ["Python", "Machine Learning"] },
+  { id: "1", name: "Alex Johnson", age: 24, bio: "Love learning Python and ML", interests: ["Python", "Machine Learning", "Tech"], streak: 47 },
+  { id: "2", name: "Sarah Miller", age: 26, bio: "Communication expert and social butterfly", interests: ["Communication", "Social Intelligence", "Networking"], streak: 32 },
+  { id: "3", name: "Mike Chen", age: 28, bio: "AI enthusiast and data scientist", interests: ["Machine Learning", "Python", "Data Science"], streak: 89 },
+  { id: "4", name: "Emma Davis", age: 23, bio: "Building my communication skills daily", interests: ["How to Communicate", "Social Intelligence"], streak: 15 },
+  { id: "5", name: "James Wilson", age: 27, bio: "Code by day, learn by night", interests: ["Python", "Machine Learning"], streak: 63 },
 ];
 
 export default function Duell() {
@@ -89,15 +90,15 @@ export default function Duell() {
 
               {/* Text Fields */}
               <div className="w-full space-y-4 mt-8">
-                {/* Field and Score */}
+                {/* Field and Streak */}
                 <div className="grid grid-cols-2 gap-4">
                   <Input 
                     placeholder="Enter text..." 
                     className="h-20 bg-muted border-muted-foreground/20"
                   />
                   <div className="h-20 bg-muted border border-muted-foreground/20 rounded-md flex items-center justify-center gap-3">
-                    <Star className="h-8 w-8 text-foreground fill-foreground" />
-                    <span className="text-4xl font-bold">12</span>
+                    <span className="text-lg font-semibold text-muted-foreground">Streak:</span>
+                    <span className="text-4xl font-bold text-primary">{currentProfile.streak}</span>
                   </div>
                 </div>
 
