@@ -22,11 +22,11 @@ const mockProfiles: Profile[] = [
     name: "Alex Johnson", 
     age: 24, 
     bio: "Love learning Python and ML", 
-    interests: ["Python", "Machine Learning", "Tech"], 
+    interests: ["Python", "Data Analysis", "Statistics"], 
     streak: 47,
     courses: [
-      { name: "Python", progress: 65 },
-      { name: "Machine Learning", progress: 42 }
+      { name: "Machine Learning", progress: 65 },
+      { name: "Java", progress: 42 }
     ]
   },
   { 
@@ -34,7 +34,7 @@ const mockProfiles: Profile[] = [
     name: "Sarah Miller", 
     age: 26, 
     bio: "Communication expert and social butterfly", 
-    interests: ["Communication", "Social Intelligence", "Networking"], 
+    interests: ["Public Speaking", "Leadership", "Networking"], 
     streak: 32,
     courses: [
       { name: "How to Communicate", progress: 78 },
@@ -46,11 +46,11 @@ const mockProfiles: Profile[] = [
     name: "Mike Chen", 
     age: 28, 
     bio: "AI enthusiast and data scientist", 
-    interests: ["Machine Learning", "Python", "Data Science"], 
+    interests: ["Machine Learning", "Deep Learning", "Neural Networks"], 
     streak: 89,
     courses: [
-      { name: "Machine Learning", progress: 92 },
-      { name: "Python", progress: 88 }
+      { name: "Python", progress: 92 },
+      { name: "How to Communicate", progress: 88 }
     ]
   },
   { 
@@ -58,10 +58,11 @@ const mockProfiles: Profile[] = [
     name: "Emma Davis", 
     age: 23, 
     bio: "Building my communication skills daily", 
-    interests: ["How to Communicate", "Social Intelligence"], 
+    interests: ["Writing", "Storytelling", "Creative Thinking"], 
     streak: 15,
     courses: [
-      { name: "How to Communicate", progress: 34 }
+      { name: "Social Intelligence", progress: 34 },
+      { name: "Python", progress: 22 }
     ]
   },
   { 
@@ -69,7 +70,7 @@ const mockProfiles: Profile[] = [
     name: "James Wilson", 
     age: 27, 
     bio: "Code by day, learn by night", 
-    interests: ["Python", "Machine Learning"], 
+    interests: ["JavaScript", "Web Development", "Design"], 
     streak: 63,
     courses: [
       { name: "Python", progress: 71 },
