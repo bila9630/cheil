@@ -1,4 +1,4 @@
-import { Users, Star, ArrowUpRight, X, Heart, Filter } from "lucide-react";
+import { Users, Star, ArrowUpRight, X, MessageCircle, Filter } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -152,7 +152,7 @@ export default function Duell() {
               className="h-24 w-24 rounded-full border-4 border-green-400 hover:bg-green-500/10 transition-colors"
               onClick={() => handleAction("like")}
             >
-              <Heart className="h-20 w-20 text-green-500 fill-green-500" strokeWidth={0} />
+              <MessageCircle className="h-20 w-20 text-green-500" strokeWidth={2.5} />
             </Button>
           </div>
 
