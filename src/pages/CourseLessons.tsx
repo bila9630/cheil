@@ -192,7 +192,7 @@ export default function CourseLessons() {
 
         {/* Course Header */}
         <div className="bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl p-6 mb-8 border border-primary/20">
-          <div className="flex items-start justify-between">
+          <div className="flex items-end justify-between">
             <div>
               <Badge variant="secondary" className="mb-2">{course.section}</Badge>
               <h1 className="font-heading font-bold text-3xl mb-2">{course.topic}</h1>
