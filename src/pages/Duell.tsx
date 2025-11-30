@@ -114,15 +114,15 @@ export default function Duell() {
           <Button
             size="icon"
             variant="outline"
-            className="h-24 w-24 rounded-full border-4 hover:bg-destructive/10 transition-colors"
+            className="h-24 w-24 rounded-full border-4 border-red-400 bg-red-50 hover:bg-red-100 transition-colors"
             onClick={() => handleAction("reject")}
           >
-            <X className="h-20 w-20 text-destructive" strokeWidth={3} />
+            <X className="h-20 w-20 text-red-500" strokeWidth={3} />
           </Button>
           <Button
             size="icon"
             variant="outline"
-            className="h-24 w-24 rounded-full border-4 hover:bg-green-500/10 transition-colors"
+            className="h-24 w-24 rounded-full border-4 border-green-400 bg-green-50 hover:bg-green-100 transition-colors"
             onClick={() => handleAction("like")}
           >
             <Heart className="h-20 w-20 text-green-500 fill-green-500" strokeWidth={0} />
