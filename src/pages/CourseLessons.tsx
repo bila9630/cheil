@@ -203,7 +203,7 @@ export default function CourseLessons() {
               <DialogTrigger asChild>
                 <Button variant="success" className="flex items-center gap-2">
                   <Users className="h-5 w-5" />
-                  Find a Learning Partner
+                  Find a Learner
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-background">
