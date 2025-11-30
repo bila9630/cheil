@@ -1,9 +1,12 @@
-import { Users, Star, ArrowUpRight, X, Heart } from "lucide-react";
+import { Users, Star, ArrowUpRight, X, Heart, Filter } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
 
 interface Profile {
@@ -94,23 +97,46 @@ const mockProfiles: Profile[] = [
 export default function Duell() {
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
   const [showProfile, setShowProfile] = useState(true);
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const currentProfile = mockProfiles[currentProfileIndex];
+  // Get all unique interests from profiles
+  const allInterests = Array.from(
+    new Set(mockProfiles.flatMap(profile => profile.interests))
+  ).sort();
+
+  // Filter profiles based on selected interests
+  const filteredProfiles = selectedFilters.length > 0
+    ? mockProfiles.filter(profile =>
+        selectedFilters.some(filter => profile.interests.includes(filter))
+      )
+    : mockProfiles;
+
+  const currentProfile = filteredProfiles[currentProfileIndex % filteredProfiles.length];
 
   const handleAction = (action: "reject" | "like") => {
     console.log(`${action} profile:`, currentProfile.name);
     setShowProfile(false);
     setTimeout(() => {
-      setCurrentProfileIndex((prev) => (prev + 1) % mockProfiles.length);
+      setCurrentProfileIndex((prev) => (prev + 1) % filteredProfiles.length);
       setShowProfile(true);
     }, 200);
+  };
+
+  const handleFilterToggle = (interest: string) => {
+    setSelectedFilters(prev =>
+      prev.includes(interest)
+        ? prev.filter(i => i !== interest)
+        : [...prev, interest]
+    );
+    setCurrentProfileIndex(0); // Reset to first profile when filters change
   };
 
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Action Buttons */}
-        <div className="flex justify-center gap-8">
+        <div className="flex justify-center items-center gap-8">
           <Button
             size="icon"
             variant="outline"
@@ -127,6 +153,60 @@ export default function Duell() {
           >
             <Heart className="h-20 w-20 text-green-500 fill-green-500" strokeWidth={0} />
           </Button>
+
+          {/* Filter Button */}
+          <Dialog open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+            <DialogTrigger asChild>
+              <Button
+                variant="outline"
+                className="h-16 px-6 border-2 hover:bg-accent transition-colors ml-8"
+              >
+                <Filter className="h-6 w-6 mr-2" />
+                Filter
+                {selectedFilters.length > 0 && (
+                  <span className="ml-2 px-2 py-0.5 bg-primary text-primary-foreground rounded-full text-xs font-semibold">
+                    {selectedFilters.length}
+                  </span>
+                )}
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md bg-background">
+              <DialogHeader>
+                <DialogTitle>Filter by Interests</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4 mt-4 max-h-[400px] overflow-y-auto">
+                {allInterests.map((interest) => (
+                  <div key={interest} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={interest}
+                      checked={selectedFilters.includes(interest)}
+                      onCheckedChange={() => handleFilterToggle(interest)}
+                    />
+                    <Label
+                      htmlFor={interest}
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                    >
+                      {interest}
+                    </Label>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between mt-6">
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setSelectedFilters([]);
+                    setCurrentProfileIndex(0);
+                  }}
+                >
+                  Clear All
+                </Button>
+                <Button onClick={() => setIsFilterOpen(false)}>
+                  Apply Filters
+                </Button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
 
         {/* Profile Card */}
