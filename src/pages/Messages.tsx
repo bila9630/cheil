@@ -2,9 +2,10 @@ import { ArrowLeft, Send } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useLocation } from "react-router-dom";
 
 interface Profile {
   id: string;
@@ -23,8 +24,19 @@ const mockProfiles: Profile[] = [
 ];
 
 export default function Messages() {
+  const location = useLocation();
   const [selectedChat, setSelectedChat] = useState<Profile | null>(null);
   const [messageText, setMessageText] = useState("");
+
+  useEffect(() => {
+    // Check if we have a profileId from navigation state
+    if (location.state?.profileId) {
+      const profile = mockProfiles.find(p => p.id === location.state.profileId);
+      if (profile) {
+        setSelectedChat(profile);
+      }
+    }
+  }, [location.state]);
 
   const handleSendMessage = () => {
     if (messageText.trim()) {
