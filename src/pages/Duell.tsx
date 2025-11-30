@@ -215,7 +215,7 @@ export default function Duell() {
             </DialogTrigger>
             <DialogContent className="max-w-md bg-background">
               <DialogHeader>
-                <DialogTitle>Filter by Interests</DialogTitle>
+                <DialogTitle>Filter by Skills</DialogTitle>
               </DialogHeader>
               <div className="space-y-4 mt-4 max-h-[400px] overflow-y-auto">
                 {allInterests.map((interest) => (
