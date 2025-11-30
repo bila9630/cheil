@@ -89,19 +89,7 @@ export default function Duell() {
 
               {/* Text Fields */}
               <div className="w-full space-y-4 mt-8">
-                {/* First Row - Two fields side by side */}
-                <div className="grid grid-cols-2 gap-4">
-                  <Input 
-                    placeholder="Enter text..." 
-                    className="h-20 bg-muted border-muted-foreground/20"
-                  />
-                  <Input 
-                    placeholder="Enter text..." 
-                    className="h-20 bg-muted border-muted-foreground/20"
-                  />
-                </div>
-
-                {/* Second Row - Field and Score */}
+                {/* Field and Score */}
                 <div className="grid grid-cols-2 gap-4">
                   <Input 
                     placeholder="Enter text..." 
@@ -113,7 +101,7 @@ export default function Duell() {
                   </div>
                 </div>
 
-                {/* Third Row - Field with arrow */}
+                {/* Field with arrow */}
                 <div className="relative">
                   <Input 
                     placeholder="Enter text..." 
@@ -122,7 +110,7 @@ export default function Duell() {
                   <ArrowUpRight className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8" />
                 </div>
 
-                {/* Fourth Row - Large text area */}
+                {/* Large text area */}
                 <Textarea 
                   placeholder="Enter longer text..." 
                   className="min-h-[300px] bg-muted border-muted-foreground/20 resize-none"
