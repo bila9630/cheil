@@ -64,6 +64,13 @@ export default function Duell() {
         {showProfile && (
           <Card className="p-8 transition-opacity duration-200">
             <div className="flex flex-col items-center text-center space-y-6">
+              <Avatar className="w-32 h-32 border-4 border-border">
+                <AvatarImage src="" alt={currentProfile.name} />
+                <AvatarFallback className="bg-primary/10 text-primary text-3xl font-bold">
+                  {currentProfile.name.split(" ").map(n => n[0]).join("")}
+                </AvatarFallback>
+              </Avatar>
+              
               <div>
                 <h2 className="text-3xl font-bold">{currentProfile.name}, {currentProfile.age}</h2>
                 <p className="text-lg text-muted-foreground mt-2">{currentProfile.bio}</p>
@@ -122,16 +129,6 @@ export default function Duell() {
             placeholder="Enter longer text..." 
             className="min-h-[300px] bg-muted border-muted-foreground/20 resize-none"
           />
-        </div>
-
-        {/* Profile Avatar */}
-        <div className="flex justify-center pt-8">
-          <Avatar className="w-48 h-48 border-4 border-border">
-            <AvatarImage src="" alt="User profile" />
-            <AvatarFallback className="bg-muted">
-              <Users className="h-24 w-24" />
-            </AvatarFallback>
-          </Avatar>
         </div>
       </div>
     </div>
