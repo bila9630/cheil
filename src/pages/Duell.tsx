@@ -14,6 +14,7 @@ interface Profile {
   interests: string[];
   streak: number;
   courses: { name: string; progress: number }[];
+  jobPosition: string;
 }
 
 const mockProfiles: Profile[] = [
@@ -27,7 +28,8 @@ const mockProfiles: Profile[] = [
     courses: [
       { name: "Machine Learning", progress: 65 },
       { name: "Java", progress: 42 }
-    ]
+    ],
+    jobPosition: "Data Analyst"
   },
   { 
     id: "2", 
@@ -39,7 +41,8 @@ const mockProfiles: Profile[] = [
     courses: [
       { name: "How to Communicate", progress: 78 },
       { name: "Social Intelligence", progress: 55 }
-    ]
+    ],
+    jobPosition: "Marketing Manager"
   },
   { 
     id: "3", 
@@ -51,7 +54,8 @@ const mockProfiles: Profile[] = [
     courses: [
       { name: "Python", progress: 92 },
       { name: "How to Communicate", progress: 88 }
-    ]
+    ],
+    jobPosition: "Senior Data Scientist"
   },
   { 
     id: "4", 
@@ -63,7 +67,8 @@ const mockProfiles: Profile[] = [
     courses: [
       { name: "Social Intelligence", progress: 34 },
       { name: "Python", progress: 22 }
-    ]
+    ],
+    jobPosition: "Content Writer"
   },
   { 
     id: "5", 
@@ -75,7 +80,8 @@ const mockProfiles: Profile[] = [
     courses: [
       { name: "Python", progress: 71 },
       { name: "Machine Learning", progress: 48 }
-    ]
+    ],
+    jobPosition: "Frontend Developer"
   },
 ];
 
@@ -146,12 +152,11 @@ export default function Duell() {
 
               {/* Text Fields */}
               <div className="w-full space-y-4 mt-8">
-                {/* Field and Streak */}
+                {/* Job Position and Streak */}
                 <div className="grid grid-cols-2 gap-4">
-                  <Input 
-                    placeholder="Enter text..." 
-                    className="h-20 bg-muted border-muted-foreground/20"
-                  />
+                  <div className="h-20 bg-muted border border-muted-foreground/20 rounded-md flex items-center justify-center px-4">
+                    <span className="text-lg font-semibold text-center">{currentProfile.jobPosition}</span>
+                  </div>
                   <div className="h-20 bg-muted border border-muted-foreground/20 rounded-md flex items-center justify-center gap-3">
                     <span className="text-lg font-semibold text-muted-foreground">Streak:</span>
                     <span className="text-4xl font-bold text-primary">{currentProfile.streak}</span>
