@@ -86,50 +86,51 @@ export default function Duell() {
                   </span>
                 ))}
               </div>
+
+              {/* Text Fields */}
+              <div className="w-full space-y-4 mt-8">
+                {/* First Row - Two fields side by side */}
+                <div className="grid grid-cols-2 gap-4">
+                  <Input 
+                    placeholder="Enter text..." 
+                    className="h-20 bg-muted border-muted-foreground/20"
+                  />
+                  <Input 
+                    placeholder="Enter text..." 
+                    className="h-20 bg-muted border-muted-foreground/20"
+                  />
+                </div>
+
+                {/* Second Row - Field and Score */}
+                <div className="grid grid-cols-2 gap-4">
+                  <Input 
+                    placeholder="Enter text..." 
+                    className="h-20 bg-muted border-muted-foreground/20"
+                  />
+                  <div className="h-20 bg-muted border border-muted-foreground/20 rounded-md flex items-center justify-center gap-3">
+                    <Star className="h-8 w-8 text-foreground fill-foreground" />
+                    <span className="text-4xl font-bold">12</span>
+                  </div>
+                </div>
+
+                {/* Third Row - Field with arrow */}
+                <div className="relative">
+                  <Input 
+                    placeholder="Enter text..." 
+                    className="h-20 bg-muted border-muted-foreground/20 pr-16"
+                  />
+                  <ArrowUpRight className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8" />
+                </div>
+
+                {/* Fourth Row - Large text area */}
+                <Textarea 
+                  placeholder="Enter longer text..." 
+                  className="min-h-[300px] bg-muted border-muted-foreground/20 resize-none"
+                />
+              </div>
             </div>
           </Card>
         )}
-        
-        <div className="space-y-4">
-          {/* First Row - Two fields side by side */}
-          <div className="grid grid-cols-2 gap-4">
-            <Input 
-              placeholder="Enter text..." 
-              className="h-20 bg-muted border-muted-foreground/20"
-            />
-            <Input 
-              placeholder="Enter text..." 
-              className="h-20 bg-muted border-muted-foreground/20"
-            />
-          </div>
-
-          {/* Second Row - Field and Score */}
-          <div className="grid grid-cols-2 gap-4">
-            <Input 
-              placeholder="Enter text..." 
-              className="h-20 bg-muted border-muted-foreground/20"
-            />
-            <div className="h-20 bg-muted border border-muted-foreground/20 rounded-md flex items-center justify-center gap-3">
-              <Star className="h-8 w-8 text-foreground fill-foreground" />
-              <span className="text-4xl font-bold">12</span>
-            </div>
-          </div>
-
-          {/* Third Row - Field with arrow */}
-          <div className="relative">
-            <Input 
-              placeholder="Enter text..." 
-              className="h-20 bg-muted border-muted-foreground/20 pr-16"
-            />
-            <ArrowUpRight className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8" />
-          </div>
-
-          {/* Fourth Row - Large text area */}
-          <Textarea 
-            placeholder="Enter longer text..." 
-            className="min-h-[300px] bg-muted border-muted-foreground/20 resize-none"
-          />
-        </div>
       </div>
     </div>
   );
