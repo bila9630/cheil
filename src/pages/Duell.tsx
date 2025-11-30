@@ -136,30 +136,32 @@ export default function Duell() {
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Action Buttons */}
-        <div className="flex justify-center items-center gap-8">
-          <Button
-            size="icon"
-            variant="outline"
-            className="h-24 w-24 rounded-full border-4 border-red-400 hover:bg-red-500/10 transition-colors"
-            onClick={() => handleAction("reject")}
-          >
-            <X className="h-20 w-20 text-red-500" strokeWidth={3} />
-          </Button>
-          <Button
-            size="icon"
-            variant="outline"
-            className="h-24 w-24 rounded-full border-4 border-green-400 hover:bg-green-500/10 transition-colors"
-            onClick={() => handleAction("like")}
-          >
-            <Heart className="h-20 w-20 text-green-500 fill-green-500" strokeWidth={0} />
-          </Button>
+        <div className="relative">
+          <div className="flex justify-center gap-8">
+            <Button
+              size="icon"
+              variant="outline"
+              className="h-24 w-24 rounded-full border-4 border-red-400 hover:bg-red-500/10 transition-colors"
+              onClick={() => handleAction("reject")}
+            >
+              <X className="h-20 w-20 text-red-500" strokeWidth={3} />
+            </Button>
+            <Button
+              size="icon"
+              variant="outline"
+              className="h-24 w-24 rounded-full border-4 border-green-400 hover:bg-green-500/10 transition-colors"
+              onClick={() => handleAction("like")}
+            >
+              <Heart className="h-20 w-20 text-green-500 fill-green-500" strokeWidth={0} />
+            </Button>
+          </div>
 
-          {/* Filter Button */}
+          {/* Filter Button - Positioned on the right */}
           <Dialog open={isFilterOpen} onOpenChange={setIsFilterOpen}>
             <DialogTrigger asChild>
               <Button
                 variant="outline"
-                className="h-16 px-6 border-2 hover:bg-accent transition-colors ml-8"
+                className="absolute right-0 top-1/2 -translate-y-1/2 h-16 px-6 border-2 hover:bg-accent transition-colors"
               >
                 <Filter className="h-6 w-6 mr-2" />
                 Filter
