@@ -99,6 +99,7 @@ export default function Duell() {
   const [showProfile, setShowProfile] = useState(true);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [showMatchModal, setShowMatchModal] = useState(false);
 
   // Get all unique interests from profiles
   const allInterests = Array.from(
@@ -116,6 +117,20 @@ export default function Duell() {
 
   const handleAction = (action: "reject" | "like") => {
     console.log(`${action} profile:`, currentProfile.name);
+    
+    if (action === "like") {
+      setShowMatchModal(true);
+    } else {
+      setShowProfile(false);
+      setTimeout(() => {
+        setCurrentProfileIndex((prev) => (prev + 1) % filteredProfiles.length);
+        setShowProfile(true);
+      }, 200);
+    }
+  };
+
+  const handleMatchModalClose = () => {
+    setShowMatchModal(false);
     setShowProfile(false);
     setTimeout(() => {
       setCurrentProfileIndex((prev) => (prev + 1) % filteredProfiles.length);
@@ -135,6 +150,21 @@ export default function Duell() {
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-4xl mx-auto space-y-6">
+        {/* Match Modal */}
+        <Dialog open={showMatchModal} onOpenChange={setShowMatchModal}>
+          <DialogContent className="max-w-md bg-background">
+            <div className="flex items-center justify-between py-8">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold">It's a match!</h2>
+                <p className="text-lg text-muted-foreground mt-1">Start exchanging</p>
+              </div>
+              <MessageCircle className="h-16 w-16 text-green-500" strokeWidth={2} />
+            </div>
+            <Button onClick={handleMatchModalClose} className="w-full">
+              Continue
+            </Button>
+          </DialogContent>
+        </Dialog>
         {/* Action Buttons */}
         <div className="relative">
           <div className="flex justify-center gap-8">
