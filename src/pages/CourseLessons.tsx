@@ -201,7 +201,7 @@ export default function CourseLessons() {
             
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
-                <Button className="flex items-center gap-2">
+                <Button variant="success" className="flex items-center gap-2">
                   <Users className="h-5 w-5" />
                   Find your Learning Partner
                 </Button>
