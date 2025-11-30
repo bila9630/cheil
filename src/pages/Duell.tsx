@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Profile {
   id: string;
@@ -95,6 +96,7 @@ const mockProfiles: Profile[] = [
 ];
 
 export default function Duell() {
+  const navigate = useNavigate();
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
   const [showProfile, setShowProfile] = useState(true);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
@@ -138,6 +140,10 @@ export default function Duell() {
     }, 200);
   };
 
+  const handleGoToMessages = () => {
+    navigate('/messages', { state: { profileId: currentProfile.id, profileName: currentProfile.name } });
+  };
+
   const handleFilterToggle = (interest: string) => {
     setSelectedFilters(prev =>
       prev.includes(interest)
@@ -158,7 +164,12 @@ export default function Duell() {
                 <h2 className="text-2xl font-bold">It's a match!</h2>
                 <p className="text-lg text-muted-foreground mt-1">Start exchanging</p>
               </div>
-              <MessageCircle className="h-16 w-16 text-green-500 scale-x-[-1]" strokeWidth={2} />
+              <button 
+                onClick={handleGoToMessages}
+                className="hover:opacity-80 transition-opacity cursor-pointer"
+              >
+                <MessageCircle className="h-16 w-16 text-green-500 scale-x-[-1]" strokeWidth={2} />
+              </button>
             </div>
             <Button onClick={handleMatchModalClose} className="w-full">
               Continue
