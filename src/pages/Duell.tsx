@@ -1,13 +1,30 @@
-import { Users, Star, ArrowUpRight } from "lucide-react";
+import { Users, Star, ArrowUpRight, X, Heart } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 export default function Duell() {
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-4xl mx-auto space-y-6">
-        <h1 className="text-3xl font-bold">Match</h1>
+        {/* Action Buttons */}
+        <div className="flex justify-center gap-8">
+          <Button
+            size="icon"
+            variant="outline"
+            className="h-24 w-24 rounded-full border-4 hover:bg-destructive/10 transition-colors"
+          >
+            <X className="h-12 w-12 text-destructive" strokeWidth={3} />
+          </Button>
+          <Button
+            size="icon"
+            variant="outline"
+            className="h-24 w-24 rounded-full border-4 hover:bg-green-500/10 transition-colors"
+          >
+            <Heart className="h-12 w-12 text-green-500 fill-green-500" strokeWidth={0} />
+          </Button>
+        </div>
         
         <div className="space-y-4">
           {/* First Row - Two fields side by side */}
