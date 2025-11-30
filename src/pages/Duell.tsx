@@ -158,7 +158,7 @@ export default function Duell() {
                 <h2 className="text-2xl font-bold">It's a match!</h2>
                 <p className="text-lg text-muted-foreground mt-1">Start exchanging</p>
               </div>
-              <MessageCircle className="h-16 w-16 text-green-500" strokeWidth={2} />
+              <MessageCircle className="h-16 w-16 text-green-500 scale-x-[-1]" strokeWidth={2} />
             </div>
             <Button onClick={handleMatchModalClose} className="w-full">
               Continue
