@@ -52,6 +52,8 @@ All colors MUST be HSL.
     --streak-foreground: 215 28% 7%;
     --rank: 217 25% 15%;
     --rank-foreground: 84 100% 80%;
+    --success: 84 80% 40%;
+    --success-foreground: 210 40% 98%;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(84 100% 60%), hsl(84 100% 70%));
@@ -104,6 +106,8 @@ All colors MUST be HSL.
     --streak-foreground: 0 0% 100%;
     --rank: 84 75% 95%;
     --rank-foreground: 84 85% 30%;
+    --success: 84 80% 38%;
+    --success-foreground: 0 0% 100%;
     
     --gradient-primary: linear-gradient(135deg, hsl(84 100% 55%), hsl(84 100% 68%));
     --gradient-accent: linear-gradient(135deg, hsl(84 100% 55%), hsl(84 100% 68%));
