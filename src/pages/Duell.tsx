@@ -13,14 +13,69 @@ interface Profile {
   bio: string;
   interests: string[];
   streak: number;
+  courses: { name: string; progress: number }[];
 }
 
 const mockProfiles: Profile[] = [
-  { id: "1", name: "Alex Johnson", age: 24, bio: "Love learning Python and ML", interests: ["Python", "Machine Learning", "Tech"], streak: 47 },
-  { id: "2", name: "Sarah Miller", age: 26, bio: "Communication expert and social butterfly", interests: ["Communication", "Social Intelligence", "Networking"], streak: 32 },
-  { id: "3", name: "Mike Chen", age: 28, bio: "AI enthusiast and data scientist", interests: ["Machine Learning", "Python", "Data Science"], streak: 89 },
-  { id: "4", name: "Emma Davis", age: 23, bio: "Building my communication skills daily", interests: ["How to Communicate", "Social Intelligence"], streak: 15 },
-  { id: "5", name: "James Wilson", age: 27, bio: "Code by day, learn by night", interests: ["Python", "Machine Learning"], streak: 63 },
+  { 
+    id: "1", 
+    name: "Alex Johnson", 
+    age: 24, 
+    bio: "Love learning Python and ML", 
+    interests: ["Python", "Machine Learning", "Tech"], 
+    streak: 47,
+    courses: [
+      { name: "Python", progress: 65 },
+      { name: "Machine Learning", progress: 42 }
+    ]
+  },
+  { 
+    id: "2", 
+    name: "Sarah Miller", 
+    age: 26, 
+    bio: "Communication expert and social butterfly", 
+    interests: ["Communication", "Social Intelligence", "Networking"], 
+    streak: 32,
+    courses: [
+      { name: "How to Communicate", progress: 78 },
+      { name: "Social Intelligence", progress: 55 }
+    ]
+  },
+  { 
+    id: "3", 
+    name: "Mike Chen", 
+    age: 28, 
+    bio: "AI enthusiast and data scientist", 
+    interests: ["Machine Learning", "Python", "Data Science"], 
+    streak: 89,
+    courses: [
+      { name: "Machine Learning", progress: 92 },
+      { name: "Python", progress: 88 }
+    ]
+  },
+  { 
+    id: "4", 
+    name: "Emma Davis", 
+    age: 23, 
+    bio: "Building my communication skills daily", 
+    interests: ["How to Communicate", "Social Intelligence"], 
+    streak: 15,
+    courses: [
+      { name: "How to Communicate", progress: 34 }
+    ]
+  },
+  { 
+    id: "5", 
+    name: "James Wilson", 
+    age: 27, 
+    bio: "Code by day, learn by night", 
+    interests: ["Python", "Machine Learning"], 
+    streak: 63,
+    courses: [
+      { name: "Python", progress: 71 },
+      { name: "Machine Learning", progress: 48 }
+    ]
+  },
 ];
 
 export default function Duell() {
@@ -102,13 +157,17 @@ export default function Duell() {
                   </div>
                 </div>
 
-                {/* Field with arrow */}
-                <div className="relative">
-                  <Input 
-                    placeholder="Enter text..." 
-                    className="h-20 bg-muted border-muted-foreground/20 pr-16"
-                  />
-                  <ArrowUpRight className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8" />
+                {/* Current Courses */}
+                <div className="h-auto bg-muted border border-muted-foreground/20 rounded-md p-4">
+                  <h3 className="text-sm font-semibold text-muted-foreground mb-3">Current Courses:</h3>
+                  <div className="space-y-2">
+                    {currentProfile.courses.map((course, index) => (
+                      <div key={index} className="flex justify-between items-center">
+                        <span className="text-sm font-medium">{course.name}</span>
+                        <span className="text-sm font-bold text-primary">{course.progress}%</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Large text area */}
