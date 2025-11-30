@@ -8,6 +8,7 @@ import { AppSidebar } from "@/components/AppSidebar";
 import { Header } from "@/components/Header";
 import Homepage from "./pages/Homepage";
 import Duell from "./pages/Duell";
+import Messages from "./pages/Messages";
 import Profile from "./pages/Profile";
 import CourseLessons from "./pages/CourseLessons";
 import NotFound from "./pages/NotFound";
@@ -35,6 +36,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout><Homepage /></Layout>} />
           <Route path="/duell" element={<Layout><Duell /></Layout>} />
+          <Route path="/messages" element={<Layout><Messages /></Layout>} />
           <Route path="/profile" element={<Layout><Profile /></Layout>} />
           <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
