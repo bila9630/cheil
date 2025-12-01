@@ -1,5 +1,3 @@
-import { StreakCard } from "@/components/StreakCard";
-import { RankCard } from "@/components/RankCard";
 import { CourseCard } from "@/components/CourseCard";
 import { Code, Brain, MessageCircle, Users } from "lucide-react";
 
@@ -16,12 +14,6 @@ export default function Homepage() {
             </h1>
             <span className="text-4xl">👋</span>
           </div>
-        </div>
-
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <StreakCard />
-          <RankCard />
         </div>
 
         {/* Courses Section */}
