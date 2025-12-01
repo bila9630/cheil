@@ -16,7 +16,6 @@ import {
 const userNavItems = [
   { title: "Homepage", url: "/", icon: Home },
   { title: "Learners", url: "/duell", icon: Users },
-  { title: "Messages", url: "/messages", icon: MessagesSquare },
   { title: "Clan", url: "/clan", icon: Shield },
   { title: "Shop", url: "/shop", icon: ShoppingBag },
   { title: "Daily Games", url: "/daily", icon: Calendar },
