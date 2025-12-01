@@ -176,65 +176,63 @@ export default function Duell() {
             </Button>
           </DialogContent>
         </Dialog>
-        {/* Filter Button */}
-        <div className="flex justify-end">
-          <Dialog open={isFilterOpen} onOpenChange={setIsFilterOpen}>
-            <DialogTrigger asChild>
-              <Button
-                variant="outline"
-                className="h-16 px-6 border-2 hover:bg-accent transition-colors"
-              >
-                <Filter className="h-6 w-6 mr-2" />
-                Filter
-                {selectedFilters.length > 0 && (
-                  <span className="ml-2 px-2 py-0.5 bg-primary text-primary-foreground rounded-full text-xs font-semibold">
-                    {selectedFilters.length}
-                  </span>
-                )}
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-md bg-background">
-              <DialogHeader>
-                <DialogTitle>Filter by Skills</DialogTitle>
-              </DialogHeader>
-              <div className="space-y-4 mt-4 max-h-[400px] overflow-y-auto">
-                {allInterests.map((interest) => (
-                  <div key={interest} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={interest}
-                      checked={selectedFilters.includes(interest)}
-                      onCheckedChange={() => handleFilterToggle(interest)}
-                    />
-                    <Label
-                      htmlFor={interest}
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                    >
-                      {interest}
-                    </Label>
-                  </div>
-                ))}
-              </div>
-              <div className="flex justify-between mt-6">
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setSelectedFilters([]);
-                    setCurrentProfileIndex(0);
-                  }}
-                >
-                  Clear All
-                </Button>
-                <Button onClick={() => setIsFilterOpen(false)}>
-                  Apply Filters
-                </Button>
-              </div>
-            </DialogContent>
-          </Dialog>
-        </div>
-
         {/* Profile Card */}
         {showProfile && (
-          <Card className="p-8 transition-opacity duration-200">
+          <Card className="p-8 transition-opacity duration-200 relative">
+            {/* Filter Button - Top Right */}
+            <Dialog open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+              <DialogTrigger asChild>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="absolute top-4 right-4 h-10 w-10 border-2 hover:bg-accent transition-colors"
+                >
+                  <Filter className="h-5 w-5" />
+                  {selectedFilters.length > 0 && (
+                    <span className="absolute -top-1 -right-1 h-5 w-5 bg-primary text-primary-foreground rounded-full text-xs font-bold flex items-center justify-center">
+                      {selectedFilters.length}
+                    </span>
+                  )}
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md bg-background">
+                <DialogHeader>
+                  <DialogTitle>Filter by Skills</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4 mt-4 max-h-[400px] overflow-y-auto">
+                  {allInterests.map((interest) => (
+                    <div key={interest} className="flex items-center space-x-2">
+                      <Checkbox
+                        id={interest}
+                        checked={selectedFilters.includes(interest)}
+                        onCheckedChange={() => handleFilterToggle(interest)}
+                      />
+                      <Label
+                        htmlFor={interest}
+                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                      >
+                        {interest}
+                      </Label>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex justify-between mt-6">
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setSelectedFilters([]);
+                      setCurrentProfileIndex(0);
+                    }}
+                  >
+                    Clear All
+                  </Button>
+                  <Button onClick={() => setIsFilterOpen(false)}>
+                    Apply Filters
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
+
             <div className="flex flex-col items-center text-center space-y-6">
               <Avatar className="w-32 h-32 border-4 border-border">
                 <AvatarImage src="" alt={currentProfile.name} />
