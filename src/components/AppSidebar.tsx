@@ -1,5 +1,6 @@
-import { Home, Users, User, MessagesSquare, Shield, ShoppingBag, Calendar } from "lucide-react";
+import { Home, Users, User, MessagesSquare, Shield, ShoppingBag, Calendar, BarChart3, Lightbulb, TrendingUp } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
+import { useAdminMode } from "@/contexts/AdminModeContext";
 import {
   Sidebar,
   SidebarContent,
@@ -12,7 +13,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 
-const navItems = [
+const userNavItems = [
   { title: "Homepage", url: "/", icon: Home },
   { title: "Learners", url: "/duell", icon: Users },
   { title: "Messages", url: "/messages", icon: MessagesSquare },
@@ -22,9 +23,18 @@ const navItems = [
   { title: "Profile", url: "/profile", icon: User },
 ];
 
+const adminNavItems = [
+  { title: "Analytics", url: "/analytics", icon: BarChart3 },
+  { title: "Insights", url: "/insights", icon: Lightbulb },
+  { title: "Performance", url: "/performance", icon: TrendingUp },
+];
+
 export function AppSidebar() {
   const { state } = useSidebar();
   const isCollapsed = state === "collapsed";
+  const { isAdminMode } = useAdminMode();
+  
+  const navItems = isAdminMode ? adminNavItems : userNavItems;
 
   return (
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Header } from "@/components/Header";
+import { AdminModeProvider } from "@/contexts/AdminModeContext";
 import Homepage from "./pages/Homepage";
 import Duell from "./pages/Duell";
 import Messages from "./pages/Messages";
@@ -14,6 +15,9 @@ import CourseLessons from "./pages/CourseLessons";
 import Clan from "./pages/Clan";
 import Shop from "./pages/Shop";
 import Daily from "./pages/Daily";
+import Analytics from "./pages/Analytics";
+import Insights from "./pages/Insights";
+import Performance from "./pages/Performance";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,18 +40,23 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout><Homepage /></Layout>} />
-          <Route path="/duell" element={<Layout><Duell /></Layout>} />
-          <Route path="/messages" element={<Layout><Messages /></Layout>} />
-          <Route path="/profile" element={<Layout><Profile /></Layout>} />
-          <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
-          <Route path="/clan" element={<Layout><Clan /></Layout>} />
-          <Route path="/shop" element={<Layout><Shop /></Layout>} />
-          <Route path="/daily" element={<Layout><Daily /></Layout>} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AdminModeProvider>
+          <Routes>
+            <Route path="/" element={<Layout><Homepage /></Layout>} />
+            <Route path="/duell" element={<Layout><Duell /></Layout>} />
+            <Route path="/messages" element={<Layout><Messages /></Layout>} />
+            <Route path="/profile" element={<Layout><Profile /></Layout>} />
+            <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
+            <Route path="/clan" element={<Layout><Clan /></Layout>} />
+            <Route path="/shop" element={<Layout><Shop /></Layout>} />
+            <Route path="/daily" element={<Layout><Daily /></Layout>} />
+            <Route path="/analytics" element={<Layout><Analytics /></Layout>} />
+            <Route path="/insights" element={<Layout><Insights /></Layout>} />
+            <Route path="/performance" element={<Layout><Performance /></Layout>} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AdminModeProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
