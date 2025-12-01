@@ -176,33 +176,13 @@ export default function Duell() {
             </Button>
           </DialogContent>
         </Dialog>
-        {/* Action Buttons */}
-        <div className="relative">
-          <div className="flex justify-center gap-8">
-            <Button
-              size="icon"
-              variant="outline"
-              className="h-24 w-24 rounded-full border-4 border-red-400 hover:bg-red-500/10 transition-colors"
-              onClick={() => handleAction("reject")}
-            >
-              <X className="h-20 w-20 text-red-500" strokeWidth={3} />
-            </Button>
-            <Button
-              size="icon"
-              variant="outline"
-              className="h-24 w-24 rounded-full border-4 border-green-400 hover:bg-green-500/10 transition-colors"
-              onClick={() => handleAction("like")}
-            >
-              <MessageCircle className="h-20 w-20 text-green-500" strokeWidth={2.5} />
-            </Button>
-          </div>
-
-          {/* Filter Button - Positioned on the right */}
+        {/* Filter Button */}
+        <div className="flex justify-end">
           <Dialog open={isFilterOpen} onOpenChange={setIsFilterOpen}>
             <DialogTrigger asChild>
               <Button
                 variant="outline"
-                className="absolute right-0 top-1/2 -translate-y-1/2 h-16 px-6 border-2 hover:bg-accent transition-colors"
+                className="h-16 px-6 border-2 hover:bg-accent transition-colors"
               >
                 <Filter className="h-6 w-6 mr-2" />
                 Filter
@@ -314,6 +294,26 @@ export default function Duell() {
             </div>
           </Card>
         )}
+
+        {/* Action Buttons - Bottom */}
+        <div className="flex justify-center gap-8 pb-6">
+          <Button
+            size="icon"
+            variant="outline"
+            className="h-24 w-24 rounded-full border-4 border-red-400 hover:bg-red-500/10 transition-colors"
+            onClick={() => handleAction("reject")}
+          >
+            <X className="h-20 w-20 text-red-500" strokeWidth={3} />
+          </Button>
+          <Button
+            size="icon"
+            variant="outline"
+            className="h-24 w-24 rounded-full border-4 border-green-400 hover:bg-green-500/10 transition-colors"
+            onClick={() => handleAction("like")}
+          >
+            <MessageCircle className="h-20 w-20 text-green-500" strokeWidth={2.5} />
+          </Button>
+        </div>
       </div>
     </div>
   );
