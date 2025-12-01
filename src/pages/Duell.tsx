@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -156,17 +157,15 @@ export default function Duell() {
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-4xl mx-auto space-y-6">
-        {/* Header with Messages Button */}
-        <div className="flex justify-between items-center">
-          <Button
-            variant="outline"
-            onClick={() => navigate('/messages')}
-            className="gap-2"
-          >
-            <MessageCircle className="h-4 w-4" />
-            Messages
-          </Button>
-        </div>
+        {/* Tabs Navigation */}
+        <Tabs value="match" className="w-full">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
+            <TabsTrigger value="match">Match</TabsTrigger>
+            <TabsTrigger value="messages" onClick={() => navigate('/messages')}>
+              Messages
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
 
         {/* Match Modal */}
         <Dialog open={showMatchModal} onOpenChange={setShowMatchModal}>
