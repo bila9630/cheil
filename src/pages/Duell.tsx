@@ -259,17 +259,6 @@ export default function Duell() {
 
               {/* Text Fields */}
               <div className="w-full space-y-4 mt-8">
-                {/* Job Position and Streak */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="h-20 bg-muted border border-muted-foreground/20 rounded-md flex items-center justify-center px-4">
-                    <span className="text-lg font-semibold text-center">{currentProfile.jobPosition}</span>
-                  </div>
-                  <div className="h-20 bg-muted border border-muted-foreground/20 rounded-md flex items-center justify-center gap-3">
-                    <span className="text-lg font-semibold text-muted-foreground">Streak:</span>
-                    <span className="text-4xl font-bold text-primary">{currentProfile.streak}</span>
-                  </div>
-                </div>
-
                 {/* Current Courses */}
                 <div className="h-auto bg-muted border border-muted-foreground/20 rounded-md p-4">
                   <h3 className="text-sm font-semibold text-muted-foreground mb-3">Current Courses:</h3>
