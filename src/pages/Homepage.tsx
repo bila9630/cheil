@@ -1,4 +1,5 @@
 import { CourseCard } from "@/components/CourseCard";
+import { ActivitySummary } from "@/components/ActivitySummary";
 import { Code, Brain, MessageCircle, Users } from "lucide-react";
 
 export default function Homepage() {
@@ -6,6 +7,9 @@ export default function Homepage() {
     <div className="min-h-screen bg-background">
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+        {/* Activity Summary */}
+        <ActivitySummary />
+
         {/* Courses Section */}
         <div className="space-y-4">
           <h2 className="font-heading font-bold text-2xl text-foreground">Your Courses</h2>
