@@ -159,7 +159,7 @@ export default function Duell() {
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Tabs Navigation */}
         <Tabs value="match" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
+          <TabsList className="grid w-fit grid-cols-2">
             <TabsTrigger value="match">Match</TabsTrigger>
             <TabsTrigger value="messages" onClick={() => navigate('/messages')}>
               Messages
