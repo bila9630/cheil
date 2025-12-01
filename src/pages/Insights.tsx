@@ -63,9 +63,10 @@ const Insights = () => {
                 <YAxis stroke="hsl(var(--foreground))" style={{ fontSize: '12px' }} />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: 'hsl(var(--card))', 
-                    border: '1px solid hsl(var(--border))',
-                    borderRadius: '8px'
+                    backgroundColor: '#1f2937', 
+                    border: '1px solid #10b981',
+                    borderRadius: '8px',
+                    color: '#ffffff'
                   }} 
                 />
                 <Line 
@@ -97,9 +98,10 @@ const Insights = () => {
                 <YAxis dataKey="feature" type="category" stroke="hsl(var(--foreground))" style={{ fontSize: '12px' }} width={80} />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: 'hsl(var(--card))', 
-                    border: '1px solid hsl(var(--border))',
-                    borderRadius: '8px'
+                    backgroundColor: '#1f2937', 
+                    border: '1px solid #6366f1',
+                    borderRadius: '8px',
+                    color: '#ffffff'
                   }} 
                 />
                 <Bar dataKey="usage" fill="#6366f1" radius={[0, 8, 8, 0]} />
@@ -123,22 +125,39 @@ const Insights = () => {
                   data={learnerSegments}
                   cx="50%"
                   cy="50%"
-                  labelLine={false}
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  labelLine={{ stroke: '#9ca3af' }}
+                  label={({ name, percent, cx, cy, midAngle, innerRadius, outerRadius }) => {
+                    const RADIAN = Math.PI / 180;
+                    const radius = outerRadius + 25;
+                    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                    return (
+                      <text 
+                        x={x} 
+                        y={y} 
+                        fill="#e5e7eb" 
+                        textAnchor={x > cx ? 'start' : 'end'} 
+                        dominantBaseline="central"
+                        style={{ fontSize: '13px', fontWeight: 500 }}
+                      >
+                        {`${name}: ${(percent * 100).toFixed(0)}%`}
+                      </text>
+                    );
+                  }}
                   outerRadius={90}
                   fill="#8884d8"
                   dataKey="value"
-                  style={{ fontSize: '12px', fill: 'hsl(var(--foreground))' }}
                 >
                   {learnerSegments.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} stroke="hsl(var(--background))" strokeWidth={2} />
+                    <Cell key={`cell-${index}`} fill={entry.color} stroke="#1f2937" strokeWidth={2} />
                   ))}
                 </Pie>
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: 'hsl(var(--card))', 
-                    border: '1px solid hsl(var(--border))',
-                    borderRadius: '8px'
+                    backgroundColor: '#1f2937', 
+                    border: '1px solid #10b981',
+                    borderRadius: '8px',
+                    color: '#ffffff'
                   }} 
                 />
               </PieChart>
@@ -162,9 +181,10 @@ const Insights = () => {
                 <YAxis stroke="hsl(var(--foreground))" style={{ fontSize: '12px' }} />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: 'hsl(var(--card))', 
-                    border: '1px solid hsl(var(--border))',
-                    borderRadius: '8px'
+                    backgroundColor: '#1f2937', 
+                    border: '1px solid #22c55e',
+                    borderRadius: '8px',
+                    color: '#ffffff'
                   }} 
                 />
                 <Legend wrapperStyle={{ fontSize: '12px' }} />
