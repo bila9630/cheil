@@ -5,8 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
+import { BottomNav } from "@/components/BottomNav";
 import { Header } from "@/components/Header";
 import { AdminModeProvider } from "@/contexts/AdminModeContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import Homepage from "./pages/Homepage";
 import Duell from "./pages/Duell";
 import Profile from "./pages/Profile";
@@ -21,17 +23,33 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const Layout = ({ children }: { children: React.ReactNode }) => (
-  <SidebarProvider>
-    <div className="flex min-h-screen w-full">
-      <AppSidebar />
-      <main className="flex-1 overflow-auto">
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return (
+      <div className="flex flex-col min-h-screen w-full pb-16">
         <Header />
-        {children}
-      </main>
-    </div>
-  </SidebarProvider>
-);
+        <main className="flex-1 overflow-auto">
+          {children}
+        </main>
+        <BottomNav />
+      </div>
+    );
+  }
+
+  return (
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full">
+        <AppSidebar />
+        <main className="flex-1 overflow-auto">
+          <Header />
+          {children}
+        </main>
+      </div>
+    </SidebarProvider>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
