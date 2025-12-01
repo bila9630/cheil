@@ -10,7 +10,6 @@ export default function Profile() {
   const userProfile = {
     name: "Your Name",
     age: 25,
-    bio: "Your tagline here",
     interests: ["Python", "Communication", "Social Intelligence"],
     streak: 34,
     courses: [
@@ -45,7 +44,6 @@ export default function Profile() {
               <h2 className="text-3xl font-bold">
                 {userProfile.name}, {userProfile.age}
               </h2>
-              <p className="text-lg text-muted-foreground mt-2">{userProfile.bio}</p>
             </div>
 
             <div className="flex flex-wrap gap-2 justify-center">
