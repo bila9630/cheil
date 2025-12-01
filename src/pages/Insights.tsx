@@ -24,10 +24,10 @@ const featureUsage = [
 ];
 
 const learnerSegments = [
-  { name: "Highly Engaged", value: 35, color: "hsl(var(--chart-1))" },
-  { name: "Regular Users", value: 45, color: "hsl(var(--chart-2))" },
-  { name: "At Risk", value: 15, color: "hsl(var(--chart-5))" },
-  { name: "Inactive", value: 5, color: "hsl(var(--muted))" },
+  { name: "Highly Engaged", value: 35, color: "#10b981" },
+  { name: "Regular Users", value: 45, color: "#3b82f6" },
+  { name: "At Risk", value: 15, color: "#f59e0b" },
+  { name: "Inactive", value: 5, color: "#6b7280" },
 ];
 
 const courseCompletion = [
@@ -58,9 +58,9 @@ const Insights = () => {
           <CardContent>
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={engagementByTime}>
-                <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                <XAxis dataKey="time" className="text-xs" />
-                <YAxis className="text-xs" />
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
+                <XAxis dataKey="time" stroke="hsl(var(--foreground))" style={{ fontSize: '12px' }} />
+                <YAxis stroke="hsl(var(--foreground))" style={{ fontSize: '12px' }} />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: 'hsl(var(--card))', 
@@ -71,9 +71,9 @@ const Insights = () => {
                 <Line 
                   type="monotone" 
                   dataKey="engagement" 
-                  stroke="hsl(var(--primary))" 
+                  stroke="#10b981" 
                   strokeWidth={3}
-                  dot={{ fill: 'hsl(var(--primary))', r: 5 }}
+                  dot={{ fill: '#10b981', r: 5 }}
                   name="Engagement %"
                 />
               </LineChart>
@@ -92,9 +92,9 @@ const Insights = () => {
           <CardContent>
             <ResponsiveContainer width="100%" height={280}>
               <BarChart data={featureUsage} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                <XAxis type="number" className="text-xs" />
-                <YAxis dataKey="feature" type="category" className="text-xs" width={80} />
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
+                <XAxis type="number" stroke="hsl(var(--foreground))" style={{ fontSize: '12px' }} />
+                <YAxis dataKey="feature" type="category" stroke="hsl(var(--foreground))" style={{ fontSize: '12px' }} width={80} />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: 'hsl(var(--card))', 
@@ -102,7 +102,7 @@ const Insights = () => {
                     borderRadius: '8px'
                   }} 
                 />
-                <Bar dataKey="usage" fill="hsl(var(--primary))" radius={[0, 8, 8, 0]} />
+                <Bar dataKey="usage" fill="#6366f1" radius={[0, 8, 8, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
@@ -128,9 +128,10 @@ const Insights = () => {
                   outerRadius={90}
                   fill="#8884d8"
                   dataKey="value"
+                  style={{ fontSize: '12px', fill: 'hsl(var(--foreground))' }}
                 >
                   {learnerSegments.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
+                    <Cell key={`cell-${index}`} fill={entry.color} stroke="hsl(var(--background))" strokeWidth={2} />
                   ))}
                 </Pie>
                 <Tooltip 
@@ -156,9 +157,9 @@ const Insights = () => {
           <CardContent>
             <ResponsiveContainer width="100%" height={280}>
               <BarChart data={courseCompletion}>
-                <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                <XAxis dataKey="course" className="text-xs" />
-                <YAxis className="text-xs" />
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
+                <XAxis dataKey="course" stroke="hsl(var(--foreground))" style={{ fontSize: '12px' }} />
+                <YAxis stroke="hsl(var(--foreground))" style={{ fontSize: '12px' }} />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: 'hsl(var(--card))', 
@@ -166,9 +167,9 @@ const Insights = () => {
                     borderRadius: '8px'
                   }} 
                 />
-                <Legend />
-                <Bar dataKey="completed" fill="hsl(var(--chart-3))" radius={[8, 8, 0, 0]} name="Completed %" />
-                <Bar dataKey="inProgress" fill="hsl(var(--chart-2))" radius={[8, 8, 0, 0]} name="In Progress %" />
+                <Legend wrapperStyle={{ fontSize: '12px' }} />
+                <Bar dataKey="completed" fill="#22c55e" radius={[8, 8, 0, 0]} name="Completed %" />
+                <Bar dataKey="inProgress" fill="#3b82f6" radius={[8, 8, 0, 0]} name="In Progress %" />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
