@@ -1,7 +1,6 @@
 import { Search, User, Settings, Shield } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { SidebarTrigger } from "@/components/ui/sidebar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +23,6 @@ export function Header() {
     <header className="sticky top-0 z-10 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
         <div className="flex items-center gap-4 flex-1">
-          <SidebarTrigger className="lg:hidden" />
           <div className="w-full lg:w-3/4 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input

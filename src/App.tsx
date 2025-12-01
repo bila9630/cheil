@@ -6,7 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Header } from "@/components/Header";
+import { BottomNav } from "@/components/BottomNav";
 import { AdminModeProvider } from "@/contexts/AdminModeContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import Homepage from "./pages/Homepage";
 import Duell from "./pages/Duell";
 import Profile from "./pages/Profile";
@@ -21,17 +23,22 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const Layout = ({ children }: { children: React.ReactNode }) => (
-  <SidebarProvider>
-    <div className="flex min-h-screen w-full">
-      <AppSidebar />
-      <main className="flex-1 overflow-auto">
-        <Header />
-        {children}
-      </main>
-    </div>
-  </SidebarProvider>
-);
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const isMobile = useIsMobile();
+
+  return (
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full">
+        {!isMobile && <AppSidebar />}
+        <main className="flex-1 overflow-auto pb-20 md:pb-0">
+          <Header />
+          {children}
+        </main>
+        <BottomNav />
+      </div>
+    </SidebarProvider>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
