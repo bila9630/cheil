@@ -1,4 +1,15 @@
-import { Home, Users, User, MessagesSquare, Shield, ShoppingBag, Calendar, BarChart3, Lightbulb, TrendingUp } from "lucide-react";
+import {
+  Home,
+  Users,
+  User,
+  MessagesSquare,
+  Shield,
+  ShoppingBag,
+  Calendar,
+  BarChart3,
+  Lightbulb,
+  TrendingUp,
+} from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useAdminMode } from "@/contexts/AdminModeContext";
 import {
@@ -15,10 +26,10 @@ import {
 
 const userNavItems = [
   { title: "Homepage", url: "/", icon: Home },
+  { title: "Daily Games", url: "/daily", icon: Calendar },
   { title: "Learners", url: "/duell", icon: Users },
   { title: "Clan", url: "/clan", icon: Shield },
   { title: "Shop", url: "/shop", icon: ShoppingBag },
-  { title: "Daily Games", url: "/daily", icon: Calendar },
   { title: "Profile", url: "/profile", icon: User },
 ];
 
@@ -32,7 +43,7 @@ export function AppSidebar() {
   const { state } = useSidebar();
   const isCollapsed = state === "collapsed";
   const { isAdminMode } = useAdminMode();
-  
+
   const navItems = isAdminMode ? adminNavItems : userNavItems;
 
   return (
