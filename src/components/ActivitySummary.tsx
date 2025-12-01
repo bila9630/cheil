@@ -59,8 +59,8 @@ export const ActivitySummary = () => {
                     onClick={() => handleCourseClick(course)}
                     className={`flex flex-col items-center gap-2 p-3 rounded-lg transition-all ${
                       activeCourse.name === course.name
-                        ? 'bg-accent ring-2 ring-primary/50'
-                        : 'hover:bg-accent'
+                        ? 'bg-muted/50 ring-1 ring-primary/20'
+                        : 'hover:bg-muted/30'
                     }`}
                   >
                     <div className={`p-3 rounded-lg ${course.color}`}>
