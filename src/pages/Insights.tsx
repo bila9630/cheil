@@ -67,7 +67,9 @@ const Insights = () => {
                     border: '1px solid #10b981',
                     borderRadius: '8px',
                     color: '#ffffff'
-                  }} 
+                  }}
+                  labelStyle={{ color: '#ffffff' }}
+                  itemStyle={{ color: '#ffffff' }}
                 />
                 <Line 
                   type="monotone" 
@@ -102,7 +104,9 @@ const Insights = () => {
                     border: '1px solid #6366f1',
                     borderRadius: '8px',
                     color: '#ffffff'
-                  }} 
+                  }}
+                  labelStyle={{ color: '#ffffff' }}
+                  itemStyle={{ color: '#ffffff' }}
                 />
                 <Bar dataKey="usage" fill="#6366f1" radius={[0, 8, 8, 0]} />
               </BarChart>
@@ -158,7 +162,9 @@ const Insights = () => {
                     border: '1px solid #10b981',
                     borderRadius: '8px',
                     color: '#ffffff'
-                  }} 
+                  }}
+                  labelStyle={{ color: '#ffffff' }}
+                  itemStyle={{ color: '#ffffff' }}
                 />
               </PieChart>
             </ResponsiveContainer>
@@ -185,7 +191,9 @@ const Insights = () => {
                     border: '1px solid #22c55e',
                     borderRadius: '8px',
                     color: '#ffffff'
-                  }} 
+                  }}
+                  labelStyle={{ color: '#ffffff' }}
+                  itemStyle={{ color: '#ffffff' }}
                 />
                 <Legend wrapperStyle={{ fontSize: '12px' }} />
                 <Bar dataKey="completed" fill="#22c55e" radius={[8, 8, 0, 0]} name="Completed %" />
