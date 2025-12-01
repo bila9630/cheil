@@ -13,6 +13,7 @@ import Profile from "./pages/Profile";
 import CourseLessons from "./pages/CourseLessons";
 import Clan from "./pages/Clan";
 import Shop from "./pages/Shop";
+import Daily from "./pages/Daily";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
           <Route path="/clan" element={<Layout><Clan /></Layout>} />
           <Route path="/shop" element={<Layout><Shop /></Layout>} />
+          <Route path="/daily" element={<Layout><Daily /></Layout>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

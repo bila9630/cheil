@@ -1,4 +1,4 @@
-import { Home, Users, User, MessagesSquare, Shield, ShoppingBag } from "lucide-react";
+import { Home, Users, User, MessagesSquare, Shield, ShoppingBag, Calendar } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import {
   Sidebar,
@@ -18,6 +18,7 @@ const navItems = [
   { title: "Messages", url: "/messages", icon: MessagesSquare },
   { title: "Clan", url: "/clan", icon: Shield },
   { title: "Shop", url: "/shop", icon: ShoppingBag },
+  { title: "Daily Games", url: "/daily", icon: Calendar },
   { title: "Profile", url: "/profile", icon: User },
 ];
 
