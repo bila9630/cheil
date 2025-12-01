@@ -11,6 +11,12 @@ const enrolledCourses = [
 
 export const ActivitySummary = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeCourse, setActiveCourse] = useState(enrolledCourses[0]);
+
+  const handleCourseClick = (course: typeof enrolledCourses[0]) => {
+    setActiveCourse(course);
+    setIsOpen(false);
+  };
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
@@ -20,10 +26,10 @@ export const ActivitySummary = () => {
             {/* Current Course - Clickable */}
             <CollapsibleTrigger asChild>
               <button className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className="p-2.5 rounded-lg bg-blue-500/10">
-                  <Code className="w-5 h-5 text-blue-500" />
+                <div className={`p-2.5 rounded-lg ${activeCourse.color}`}>
+                  <activeCourse.icon className="w-5 h-5" />
                 </div>
-                <span className="font-heading font-semibold text-foreground">Python</span>
+                <span className="font-heading font-semibold text-foreground">{activeCourse.name}</span>
               </button>
             </CollapsibleTrigger>
 
@@ -48,15 +54,20 @@ export const ActivitySummary = () => {
             <div className="pt-4 mt-4 border-t border-border">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {enrolledCourses.map((course) => (
-                  <div
+                  <button
                     key={course.name}
-                    className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                    onClick={() => handleCourseClick(course)}
+                    className={`flex flex-col items-center gap-2 p-3 rounded-lg transition-all ${
+                      activeCourse.name === course.name
+                        ? 'bg-accent ring-2 ring-primary/50'
+                        : 'hover:bg-accent'
+                    }`}
                   >
                     <div className={`p-3 rounded-lg ${course.color}`}>
                       <course.icon className="w-6 h-6" />
                     </div>
                     <span className="text-sm font-medium text-center">{course.name}</span>
-                  </div>
+                  </button>
                 ))}
                 
                 {/* Add Course Button */}
