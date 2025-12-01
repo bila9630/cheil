@@ -156,6 +156,18 @@ export default function Duell() {
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-4xl mx-auto space-y-6">
+        {/* Header with Messages Button */}
+        <div className="flex justify-between items-center">
+          <Button
+            variant="outline"
+            onClick={() => navigate('/messages')}
+            className="gap-2"
+          >
+            <MessageCircle className="h-4 w-4" />
+            Messages
+          </Button>
+        </div>
+
         {/* Match Modal */}
         <Dialog open={showMatchModal} onOpenChange={setShowMatchModal}>
           <DialogContent className="max-w-md bg-background">
