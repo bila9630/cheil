@@ -13,7 +13,7 @@ import Homepage from "./pages/Homepage";
 import Duell from "./pages/Duell";
 import Profile from "./pages/Profile";
 import CourseLessons from "./pages/CourseLessons";
-import Clan from "./pages/Clan";
+import Tribe from "./pages/Tribe";
 import Shop from "./pages/Shop";
 import Daily from "./pages/Daily";
 import Analytics from "./pages/Analytics";
@@ -52,7 +52,7 @@ const App = () => (
             <Route path="/duell" element={<Layout><Duell /></Layout>} />
             <Route path="/profile" element={<Layout><Profile /></Layout>} />
             <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
-            <Route path="/clan" element={<Layout><Clan /></Layout>} />
+            <Route path="/tribe" element={<Layout><Tribe /></Layout>} />
             <Route path="/shop" element={<Layout><Shop /></Layout>} />
             <Route path="/daily" element={<Layout><Daily /></Layout>} />
             <Route path="/analytics" element={<Layout><Analytics /></Layout>} />

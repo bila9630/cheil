@@ -16,7 +16,7 @@ const userNavItems = [
   { title: "Home", url: "/", icon: Home },
   { title: "Daily", url: "/daily", icon: Calendar },
   { title: "Learners", url: "/duell", icon: Users },
-  { title: "Clan", url: "/clan", icon: Shield },
+  { title: "Tribe", url: "/tribe", icon: Shield },
   { title: "Shop", url: "/shop", icon: ShoppingBag },
   { title: "Profile", url: "/profile", icon: User },
 ];
