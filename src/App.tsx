@@ -9,7 +9,6 @@ import { Header } from "@/components/Header";
 import { AdminModeProvider } from "@/contexts/AdminModeContext";
 import Homepage from "./pages/Homepage";
 import Duell from "./pages/Duell";
-import Messages from "./pages/Messages";
 import Profile from "./pages/Profile";
 import CourseLessons from "./pages/CourseLessons";
 import Clan from "./pages/Clan";
@@ -44,7 +43,6 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Layout><Homepage /></Layout>} />
             <Route path="/duell" element={<Layout><Duell /></Layout>} />
-            <Route path="/messages" element={<Layout><Messages /></Layout>} />
             <Route path="/profile" element={<Layout><Profile /></Layout>} />
             <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
             <Route path="/clan" element={<Layout><Clan /></Layout>} />
