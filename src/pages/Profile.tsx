@@ -31,7 +31,7 @@ export default function Profile() {
             <div className="flex flex-col sm:flex-row gap-6 items-start">
               <Avatar className="w-32 h-32 border-4 border-border shrink-0">
                 <AvatarImage src="" alt={userProfile.name} />
-                <AvatarFallback className="bg-primary/10 text-primary text-3xl font-bold">YN</AvatarFallback>
+                <AvatarFallback className="bg-primary/10 text-primary text-3xl font-bold">JD</AvatarFallback>
               </Avatar>
 
               <div className="flex-1 space-y-4">
