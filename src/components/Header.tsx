@@ -9,9 +9,16 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useNavigate } from "react-router-dom";
+import { useAdminMode } from "@/contexts/AdminModeContext";
 
 export function Header() {
   const navigate = useNavigate();
+  const { isAdminMode, toggleAdminMode } = useAdminMode();
+
+  const handleAdminSwitch = () => {
+    toggleAdminMode();
+    navigate(isAdminMode ? "/" : "/analytics");
+  };
 
   return (
     <header className="sticky top-0 z-10 bg-background/80 backdrop-blur-md border-b border-border">
@@ -47,9 +54,9 @@ export function Header() {
               <Settings className="mr-2 h-4 w-4" />
               <span>Settings</span>
             </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
+            <DropdownMenuItem onClick={handleAdminSwitch} className="cursor-pointer">
               <Shield className="mr-2 h-4 w-4" />
-              <span>Switch to Admin</span>
+              <span>{isAdminMode ? "Switch to User" : "Switch to Admin"}</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
