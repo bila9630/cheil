@@ -8,17 +8,17 @@ import { RankCard } from "@/components/RankCard";
 export default function Profile() {
   // User's own profile data
   const userProfile = {
-    name: "Your Name",
-    age: 25,
-    interests: ["Python", "Communication", "Social Intelligence"],
+    name: "John Doe",
+    age: 28,
+    interests: ["Python", "Data Analysis", "Public Speaking"],
     streak: 34,
     courses: [
       { name: "Machine Learning", progress: 65 },
       { name: "How to Communicate", progress: 78 },
     ],
-    jobPosition: "Your Job Title",
+    jobPosition: "Software Engineer",
     aboutMe:
-      "Tell others about yourself! Share your passions, goals, and what makes you unique. This is your chance to connect with like-minded learners.",
+      "Passionate about AI and machine learning. Love connecting with fellow learners and sharing knowledge. Always looking to improve my communication skills while diving deeper into data science.",
   };
 
   return (
