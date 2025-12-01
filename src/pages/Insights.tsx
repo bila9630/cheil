@@ -262,22 +262,6 @@ const Insights = () => {
                 </div>
               </div>
             </div>
-
-            <div className="flex gap-4 p-4 rounded-lg bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
-              <div className="flex-shrink-0">
-                <Badge className="h-10 w-10 rounded-full flex items-center justify-center text-lg font-bold bg-primary/20 text-primary hover:bg-primary/20">
-                  4
-                </Badge>
-              </div>
-              <div className="flex-1">
-                <div className="flex items-start gap-2">
-                  <Users className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm leading-relaxed">
-                    <span className="font-semibold">Social features underutilized</span> - Clan and duel participation at 23%, despite high completion rates when engaged.
-                  </p>
-                </div>
-              </div>
-            </div>
           </CardContent>
         </Card>
 
@@ -333,22 +317,6 @@ const Insights = () => {
                   <Clock className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
                   <p className="text-sm leading-relaxed">
                     <span className="font-semibold">Optimize for evening sessions</span> - Send push notifications at 5 PM and add special evening challenges to capitalize on peak hours.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex gap-4 p-4 rounded-lg bg-card/50 border border-border/50 hover:border-chart-3/30 transition-colors">
-              <div className="flex-shrink-0">
-                <Badge className="h-10 w-10 rounded-full flex items-center justify-center text-lg font-bold bg-chart-3/20 text-chart-3 hover:bg-chart-3/20">
-                  4
-                </Badge>
-              </div>
-              <div className="flex-1">
-                <div className="flex items-start gap-2">
-                  <Heart className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm leading-relaxed">
-                    <span className="font-semibold">Expand gamification elements</span> - Add achievement badges, leaderboards, and personalized milestones to sustain long-term motivation.
                   </p>
                 </div>
               </div>
