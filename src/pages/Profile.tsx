@@ -2,6 +2,8 @@ import { Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
+import { StreakCard } from "@/components/StreakCard";
+import { RankCard } from "@/components/RankCard";
 
 export default function Profile() {
   // User's own profile data
@@ -23,6 +25,12 @@ export default function Profile() {
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-4xl mx-auto space-y-6">
         <h1 className="text-3xl font-bold">My Profile</h1>
+
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <StreakCard />
+          <RankCard />
+        </div>
 
         {/* Profile Card */}
         <Card className="p-8">
