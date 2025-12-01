@@ -11,6 +11,8 @@ import Duell from "./pages/Duell";
 import Messages from "./pages/Messages";
 import Profile from "./pages/Profile";
 import CourseLessons from "./pages/CourseLessons";
+import Clan from "./pages/Clan";
+import Shop from "./pages/Shop";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +41,8 @@ const App = () => (
           <Route path="/messages" element={<Layout><Messages /></Layout>} />
           <Route path="/profile" element={<Layout><Profile /></Layout>} />
           <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
+          <Route path="/clan" element={<Layout><Clan /></Layout>} />
+          <Route path="/shop" element={<Layout><Shop /></Layout>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
