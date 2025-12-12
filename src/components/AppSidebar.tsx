@@ -4,7 +4,6 @@ import {
   User,
   MessagesSquare,
   Shield,
-  ShoppingBag,
   Calendar,
   BarChart3,
   Lightbulb,
@@ -29,7 +28,6 @@ const userNavItems = [
   { title: "Daily Games", url: "/daily", icon: Calendar },
   { title: "Learners", url: "/duell", icon: Users },
   { title: "Tribe", url: "/tribe", icon: Shield },
-  { title: "Shop", url: "/shop", icon: ShoppingBag },
   { title: "Profile", url: "/profile", icon: User },
 ];
 

@@ -14,7 +14,6 @@ import Duell from "./pages/Duell";
 import Profile from "./pages/Profile";
 import CourseLessons from "./pages/CourseLessons";
 import Tribe from "./pages/Tribe";
-import Shop from "./pages/Shop";
 import Daily from "./pages/Daily";
 import Analytics from "./pages/Analytics";
 import Insights from "./pages/Insights";
@@ -53,7 +52,6 @@ const App = () => (
             <Route path="/profile" element={<Layout><Profile /></Layout>} />
             <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
             <Route path="/tribe" element={<Layout><Tribe /></Layout>} />
-            <Route path="/shop" element={<Layout><Shop /></Layout>} />
             <Route path="/daily" element={<Layout><Daily /></Layout>} />
             <Route path="/analytics" element={<Layout><Analytics /></Layout>} />
             <Route path="/insights" element={<Layout><Insights /></Layout>} />
