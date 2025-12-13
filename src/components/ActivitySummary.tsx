@@ -71,11 +71,11 @@ export const ActivitySummary = () => {
                 ))}
                 
                 {/* Add Course Button */}
-                <button className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-accent transition-colors border border-dashed border-border">
-                  <div className="p-3 rounded-lg bg-muted">
+                <button className="flex flex-col items-center gap-2 p-3 rounded-lg bg-primary/20 hover:bg-primary/30 transition-all border border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)]">
+                  <div className="p-3 rounded-lg bg-card/80 backdrop-blur-sm">
                     <Plus className="w-6 h-6 text-muted-foreground" />
                   </div>
-                  <span className="text-sm font-medium text-muted-foreground">Add course</span>
+                  <span className="text-sm font-medium text-primary">Add course</span>
                 </button>
               </div>
             </div>
