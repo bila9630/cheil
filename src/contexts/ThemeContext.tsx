@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [colorPalette, setColorPaletteState] = useState<ColorPalette>(() => {
     const saved = localStorage.getItem("color-palette");
-    return (saved as ColorPalette) || "modern";
+    return (saved as ColorPalette) || "classic";
   });
 
   const setColorPalette = (palette: ColorPalette) => {
