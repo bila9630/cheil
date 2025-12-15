@@ -8,6 +8,7 @@ import { AppSidebar } from "@/components/AppSidebar";
 import { Header } from "@/components/Header";
 import { BottomNav } from "@/components/BottomNav";
 import { AdminModeProvider } from "@/contexts/AdminModeContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import Homepage from "./pages/Homepage";
 import Duell from "./pages/Duell";
@@ -41,27 +42,29 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <AdminModeProvider>
-          <Routes>
-            <Route path="/" element={<Layout><Homepage /></Layout>} />
-            <Route path="/duell" element={<Layout><Duell /></Layout>} />
-            <Route path="/profile" element={<Layout><Profile /></Layout>} />
-            <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
-            <Route path="/tribe" element={<Layout><Tribe /></Layout>} />
-            <Route path="/daily" element={<Layout><Daily /></Layout>} />
-            <Route path="/analytics" element={<Layout><Analytics /></Layout>} />
-            <Route path="/insights" element={<Layout><Insights /></Layout>} />
-            <Route path="/performance" element={<Layout><Performance /></Layout>} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AdminModeProvider>
-      </BrowserRouter>
-    </TooltipProvider>
+    <ThemeProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <AdminModeProvider>
+            <Routes>
+              <Route path="/" element={<Layout><Homepage /></Layout>} />
+              <Route path="/duell" element={<Layout><Duell /></Layout>} />
+              <Route path="/profile" element={<Layout><Profile /></Layout>} />
+              <Route path="/course/:courseId" element={<Layout><CourseLessons /></Layout>} />
+              <Route path="/tribe" element={<Layout><Tribe /></Layout>} />
+              <Route path="/daily" element={<Layout><Daily /></Layout>} />
+              <Route path="/analytics" element={<Layout><Analytics /></Layout>} />
+              <Route path="/insights" element={<Layout><Insights /></Layout>} />
+              <Route path="/performance" element={<Layout><Performance /></Layout>} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </AdminModeProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 
