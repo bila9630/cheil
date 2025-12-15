@@ -171,19 +171,19 @@ export default function Homepage() {
         <ActivitySummary />
 
         {/* Course Header */}
-        <div className="bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl p-6 my-8 border border-primary/20">
-          <div className="flex items-end justify-between">
+        <div className="bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl p-4 sm:p-6 my-6 sm:my-8 border border-primary/20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <Badge variant="secondary" className="mb-2">{course.section}</Badge>
-              <h1 className="font-heading font-bold text-3xl mb-2">{course.topic}</h1>
-              <p className="text-muted-foreground">{course.title}</p>
+              <Badge variant="secondary" className="mb-2 text-xs sm:text-sm">{course.section}</Badge>
+              <h1 className="font-heading font-bold text-2xl sm:text-3xl mb-2">{course.topic}</h1>
+              <p className="text-muted-foreground text-sm sm:text-base">{course.title}</p>
             </div>
             
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
-                <Button variant="default" className="flex items-center gap-2">
-                  <Users className="h-5 w-5" />
-                  Find a Learner
+                <Button variant="default" className="flex items-center gap-2 w-full sm:w-auto shrink-0">
+                  <Users className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-sm sm:text-base">Find a Learner</span>
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-background">
