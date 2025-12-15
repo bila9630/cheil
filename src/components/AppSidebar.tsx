@@ -2,9 +2,6 @@ import {
   Home,
   Users,
   User,
-  MessagesSquare,
-  Shield,
-  Calendar,
   BarChart3,
   Lightbulb,
   TrendingUp,
@@ -25,9 +22,7 @@ import {
 
 const userNavItems = [
   { title: "Homepage", url: "/", icon: Home },
-  { title: "Daily Games", url: "/daily", icon: Calendar },
   { title: "Learners", url: "/duell", icon: Users },
-  { title: "Tribe", url: "/tribe", icon: Shield },
   { title: "Profile", url: "/profile", icon: User },
 ];
 
