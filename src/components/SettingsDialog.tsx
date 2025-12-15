@@ -46,11 +46,11 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                 <RadioGroupItem value="classic" id="classic" />
                 <Label htmlFor="classic" className="flex-1 cursor-pointer">
                   <div className="font-medium">Classic</div>
-                  <div className="text-sm text-muted-foreground">Purple, violet & pink palette</div>
+                  <div className="text-sm text-muted-foreground">Neon green dark theme</div>
                   <div className="flex gap-2 mt-2">
-                    <div className="w-6 h-6 rounded-full" style={{ background: "hsl(262, 83%, 58%)" }} />
-                    <div className="w-6 h-6 rounded-full" style={{ background: "hsl(280, 65%, 60%)" }} />
-                    <div className="w-6 h-6 rounded-full" style={{ background: "hsl(330, 80%, 60%)" }} />
+                    <div className="w-6 h-6 rounded-full" style={{ background: "hsl(84, 100%, 60%)" }} />
+                    <div className="w-6 h-6 rounded-full" style={{ background: "hsl(217, 25%, 15%)" }} />
+                    <div className="w-6 h-6 rounded-full" style={{ background: "hsl(84, 100%, 50%)" }} />
                   </div>
                 </Label>
               </div>
