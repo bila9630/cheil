@@ -22,31 +22,31 @@ export const ActivitySummary = () => {
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <Card className="bg-card border-primary/20 shadow-elevated">
         <div className="p-4">
-          <div className="flex items-center justify-between gap-6">
+          <div className="flex items-center justify-between gap-3 sm:gap-6 flex-wrap sm:flex-nowrap">
             {/* Current Course - Clickable */}
             <CollapsibleTrigger asChild>
-              <button className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className={`p-2.5 rounded-lg ${activeCourse.color}`}>
-                  <activeCourse.icon className="w-5 h-5" />
+              <button className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity min-w-0">
+                <div className={`p-2 sm:p-2.5 rounded-lg shrink-0 ${activeCourse.color}`}>
+                  <activeCourse.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <span className="font-heading font-semibold text-foreground">{activeCourse.name}</span>
+                <span className="font-heading font-semibold text-foreground text-sm sm:text-base truncate">{activeCourse.name}</span>
               </button>
             </CollapsibleTrigger>
 
             {/* Streak */}
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-lg bg-orange-500/10">
-                <Flame className="w-5 h-5 text-orange-500" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="p-2 sm:p-2.5 rounded-lg bg-orange-500/10 shrink-0">
+                <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
               </div>
-              <span className="font-heading font-semibold text-foreground">15 days</span>
+              <span className="font-heading font-semibold text-foreground text-sm sm:text-base whitespace-nowrap">15 days</span>
             </div>
 
             {/* Gems */}
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-lg bg-primary/10">
-                <Gem className="w-5 h-5 text-primary" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="p-2 sm:p-2.5 rounded-lg bg-primary/10 shrink-0">
+                <Gem className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </div>
-              <span className="font-heading font-semibold text-foreground">560</span>
+              <span className="font-heading font-semibold text-foreground text-sm sm:text-base">560</span>
             </div>
           </div>
 
