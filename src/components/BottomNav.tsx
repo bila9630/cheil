@@ -2,8 +2,6 @@ import {
   Home,
   Users,
   User,
-  Shield,
-  Calendar,
   BarChart3,
   Lightbulb,
   TrendingUp,
@@ -13,9 +11,7 @@ import { useAdminMode } from "@/contexts/AdminModeContext";
 
 const userNavItems = [
   { title: "Home", url: "/", icon: Home },
-  { title: "Daily", url: "/daily", icon: Calendar },
   { title: "Learners", url: "/duell", icon: Users },
-  { title: "Tribe", url: "/tribe", icon: Shield },
   { title: "Profile", url: "/profile", icon: User },
 ];
 
